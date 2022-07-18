@@ -1,17 +1,14 @@
-//
-//  AvenApp.swift
-//  Aven
-//
-//  Created by Armando Gonzalez on 7/17/22.
-//
 
 import SwiftUI
 
 @main
 struct AvenApp: App {
+    @StateObject private var organizationsData = OrganizationsDataModel()
+    
     var body: some Scene {
         WindowGroup {
             ContentView()
+                .environmentObject(self.organizationsData)
         }
     }
 }
